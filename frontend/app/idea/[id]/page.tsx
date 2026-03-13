@@ -4,6 +4,8 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
+const API = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 export default function IdeaReportPage() {
   const params = useParams();
   const ideaId = params.id as string;
@@ -17,7 +19,7 @@ export default function IdeaReportPage() {
     const fetchIdea = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/idea/${ideaId}`
+          `${API}/api/idea/${ideaId}`
         );
 
         if (!response.ok) {

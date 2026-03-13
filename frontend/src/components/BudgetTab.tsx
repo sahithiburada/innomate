@@ -12,6 +12,7 @@ import {
   Clock, DollarSign, AlertCircle,
 } from "lucide-react";
 import InfoTooltip from "@/src/components/InfoTooltip";
+const API = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 const COLORS = {
   revenue: "#16a34a",
@@ -110,7 +111,7 @@ export default function BudgetTab({ ideaId }: { ideaId: string }) {
   async function fetchBudget() {
     const { data: sess } = await supabase.auth.getSession();
     const token = sess.session?.access_token;
-    const res   = await fetch(`http://localhost:8000/api/budget/${ideaId}`, {
+    const res = await fetch(`${API}/api/budget/${ideaId}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });
