@@ -7,3 +7,4 @@ sqlalchemy
 asyncpg
 ddgs
 python-jose[cryptography]
+requests
