@@ -21,6 +21,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+const API = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function DashboardPage() {
   const [idea, setIdea] = useState("");
@@ -89,8 +90,8 @@ export default function DashboardPage() {
         const { data } = await supabase.auth.getSession();
         const token = data.session?.access_token;
 
-        const response = await fetch(
-          `http://127.0.0.1:8000/api/idea/${ideaId}`,
+      const response = await fetch(
+        `${API}/api/idea/${ideaId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -151,8 +152,8 @@ export default function DashboardPage() {
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
-      const response = await fetch(
-        "http://127.0.0.1:8000/api/idea/analyze",
+    const response = await fetch(
+      `${API}/api/idea/analyze`,
         {
           method: "POST",
           headers: {
@@ -193,8 +194,8 @@ export default function DashboardPage() {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
 
-    await fetch(
-      `http://127.0.0.1:8000/api/idea/lock/${preview.idea_id}`,
+  await fetch(
+    `${API}/api/idea/lock/${preview.idea_id}`,
       {
         method: "POST",
         headers: {
@@ -228,8 +229,8 @@ export default function DashboardPage() {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
 
-    const response = await fetch(
-      `http://127.0.0.1:8000/api/idea/regenerate/${preview.idea_id}`,
+  const response = await fetch(
+    `${API}/api/idea/regenerate/${preview.idea_id}`,
       {
         method: "POST",
         headers: {
