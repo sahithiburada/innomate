@@ -151,22 +151,52 @@ Frontend will run on:
 http://localhost:3000
 ```
 
----
-
 ## 🔐 Environment Variables
 
-Create `.env` files for backend and frontend with required API keys and configuration values.
+This project uses environment variables for API keys and database configuration.
 
-Example (backend):
+The repository includes **example environment files** to show the required variables.
+
+### Backend Setup
+
+1. Copy the example file:
 
 ```
+cp backend/.env.example backend/.env
+```
+
+2. Fill in the required values:
+
+```
+GROQ_API_KEY=
 SUPABASE_DATABASE_URL=
 SUPABASE_URL=
-SUPABASE_ANON_KEY=
-GROQ_API_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
 ```
 
 ---
+
+### Frontend Setup
+
+1. Copy the example file:
+
+```
+cp frontend/.env.example frontend/.env.local
+```
+
+2. Fill in the required values:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_BACKEND_URL=
+```
+
+---
+
+⚠️ **Important:**
+The actual `.env` files are ignored by Git and **must not be committed** to the repository to keep API keys and credentials secure.
+
 
 ## 📊 Future Enhancements
 
