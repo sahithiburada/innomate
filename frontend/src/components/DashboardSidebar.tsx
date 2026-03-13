@@ -21,9 +21,9 @@ import { Trash2, Download, Loader2 } from "lucide-react";
 
 interface SidebarProps {
   sidebarOpen: boolean;
-  setSidebarOpen: (v: boolean) => void;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
   mobileSidebar: boolean;
-  setMobileSidebar: (v: boolean) => void;
+  setMobileSidebar: React.Dispatch<React.SetStateAction<boolean>>;
   activeId: string | null;
 }
 
