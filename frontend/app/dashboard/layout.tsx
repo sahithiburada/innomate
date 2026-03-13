@@ -15,6 +15,7 @@ export default function DashboardLayout({
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileSidebar, setMobileSidebar] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const checkUser = async () => {
@@ -52,6 +53,7 @@ export default function DashboardLayout({
         setSidebarOpen={setSidebarOpen}
         mobileSidebar={mobileSidebar}
         setMobileSidebar={setMobileSidebar}
+        activeId={activeId}
       />
 
       {/* ===== Main Content ===== */}
