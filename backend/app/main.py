@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://innomate-git-main-sahithi-buradas-projects.vercel.app"
+        "innomate-git-sahithi-sahithi-buradas-projects.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
