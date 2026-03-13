@@ -12,7 +12,10 @@ from app.routes.report_routes import router as report_router
 app = FastAPI(title="Innomate Backend")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://innomate-git-main-sahithi-buradas-projects.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
