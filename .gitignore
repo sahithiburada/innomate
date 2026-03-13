@@ -7,6 +7,9 @@
 .env
 .env.local
 .env.*
+!*.env.example
+!**/.env.example
+
 backend/.env
 frontend/.env.local
 
@@ -23,8 +26,6 @@ backend/.venv/
 *.pyo
 *.pyd
 *.sqlite3
-
-# Python cache
 
 .pytest_cache/
 .mypy_cache/
